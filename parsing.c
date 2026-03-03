@@ -6,16 +6,18 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:35:47 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/03 14:12:13 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/03 21:10:35 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 char	verify_commands(char *argv)
 {
 	char	command;
 
+	command = '0';
 	if (ft_strncmp(argv, "--simple", 8) == 0)
 		command = 's';
 	else if (ft_strncmp(argv, "--medium", 8) == 0)
@@ -26,8 +28,6 @@ char	verify_commands(char *argv)
 		command = 'a';
 	else if (ft_strncmp(argv, "--bench", 7) == 0)
 		command = 'b';
-	else
-		command = '0';
 	return (command);
 }
 
@@ -85,4 +85,31 @@ t_list	*parsing_num(char ***splits)
 	if (duplicate(&stack_a))
 		lst_clear(&stack_a);
 	return (stack_a);
+}
+
+char	parsing_strategy(char **argv)
+{
+	int	i;
+	char	strategy;
+	char	result_number;
+
+	i = 0;
+	strategy = 'a';
+
+	result_number = 0;
+	while (argv[i] != NULL)
+	{
+		if (verify_commands(argv[i]) != '0')
+		{
+			strategy = verify_commands(argv[i]);
+			result_number++;
+		}
+		i++;
+	}
+	if (result_number > 1)
+	{
+		error();
+		return ('0');
+	}
+	return (strategy);
 }

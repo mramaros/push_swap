@@ -6,11 +6,12 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 17:02:13 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/03 09:33:55 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/03 21:49:40 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 int	*int_convertion(char *str)
 {
@@ -54,12 +55,12 @@ int	duplicate(t_list **stack)
 	t_list	*temp1;
 
 	temp = *stack;
-	while (temp->next != NULL)
+	while (temp != NULL)
 	{
 		temp1 = temp->next;
-		while (temp1->next != NULL)
+		while (temp1 != NULL)
 		{
-			if (*(int *)(temp)->content == *(int *)(temp1)->content)
+			if (*(int *)temp->content == *(int *)temp1->content)
 				return (1);
 			temp1 = temp1->next;
 		}

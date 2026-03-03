@@ -6,11 +6,13 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/03 14:36:36 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/03 16:32:36 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+char	parsing_strategy(char **argv);
 
 static void	free_splits(char ***splits)
 {
@@ -39,21 +41,21 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		error();
-	// char	strategy;
+	char	strategy;
 	stack_a = NULL;
 	splits = parsing_all(argc, argv);
 	if (!splits)
 		error();
 	stack_a = parsing_num(splits);
 	free_splits(splits);
-	// strategy = parsing_strategy(argv + 1);
-	// if (!strategy)
-	// strategy = 'a';
+	strategy = parsing_strategy(argv);
+	if (!strategy)
+		strategy = 'a';
 	while (stack_a != NULL)
 	{
 		ft_printf("%i ", *(int *)(stack_a)->content);
 		stack_a = stack_a->next;
 	}
-	// ft_printf("\n%c", strategy);
+	ft_printf("\n%c", strategy);
 	ft_lstclear(&stack_a, free);
 }
