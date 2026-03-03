@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 17:02:13 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/02 19:30:27 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/03 09:33:55 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	duplicate(t_list **stack)
 		temp1 = temp->next;
 		while (temp1->next != NULL)
 		{
-			if (*(int *)(temp)->content == *(int *)(temp)->next->content)
+			if (*(int *)(temp)->content == *(int *)(temp1)->content)
 				return (1);
 			temp1 = temp1->next;
 		}

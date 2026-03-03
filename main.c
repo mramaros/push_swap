@@ -6,27 +6,54 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/03 07:56:02 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/03 14:36:36 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static void	free_splits(char ***splits)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (splits[i])
+	{
+		j = 0;
+		while (splits[i][j])
+		{
+			free(splits[i][j]);
+			j++;
+		}
+		free(splits[i]);
+		i++;
+	}
+	free(splits);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
+	char	***splits;
 
-	 char	strategy;
-	(void)argc;
+	if (argc < 2)
+		error();
+	// char	strategy;
 	stack_a = NULL;
-	stack_a = parsing_num(argv + 1);
-	strategy = parsing_strategy(argv + 1);
-	if (!strategy)
-		strategy = 'a';
+	splits = parsing_all(argc, argv);
+	if (!splits)
+		error();
+	stack_a = parsing_num(splits);
+	free_splits(splits);
+	// strategy = parsing_strategy(argv + 1);
+	// if (!strategy)
+	// strategy = 'a';
 	while (stack_a != NULL)
 	{
 		ft_printf("%i ", *(int *)(stack_a)->content);
 		stack_a = stack_a->next;
 	}
-	 ft_printf("\n%c", strategy);
+	// ft_printf("\n%c", strategy);
+	ft_lstclear(&stack_a, free);
 }

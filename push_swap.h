@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:54:23 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/02 16:59:38 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/03 13:39:52 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 
 # include "ft_printf/ft_printf.h"
 
-t_list	*parsing_num(char **argv);
-char	parsing_strategy(char **argv);
+char	***parsing_all(int argc, char **argv);
+t_list	*parsing_num(char ***splits);
+//  char parsing_strategy(char **argv);
 long	ft_atoi_long(const char *nptr);
 void	error(void);
 void	lst_clear(t_list **stack);
 int		*int_convertion(char *str);
 int		duplicate(t_list **stack);
 int		is_int(char *str);
+char	verify_commands(char *argv);
 #endif
