@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 17:02:13 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/02 17:08:17 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/02 19:30:27 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,18 @@ void	lst_clear(t_list **stack)
 int	duplicate(t_list **stack)
 {
 	t_list	*temp;
+	t_list	*temp1;
 
 	temp = *stack;
 	while (temp->next != NULL)
 	{
-		if (*(int *)(temp)->content == *(int *)(temp)->next->content)
-			return (1);
+		temp1 = temp->next;
+		while (temp1->next != NULL)
+		{
+			if (*(int *)(temp)->content == *(int *)(temp)->next->content)
+				return (1);
+			temp1 = temp1->next;
+		}
 		temp = temp->next;
 	}
 	return (0);
