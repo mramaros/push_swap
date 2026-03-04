@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:35:47 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/03 21:10:35 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/04 17:47:11 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,14 +102,10 @@ char	parsing_strategy(char **argv)
 		if (verify_commands(argv[i]) != '0')
 		{
 			strategy = verify_commands(argv[i]);
-			result_number++;
+			if (strategy != '0')
+				break;
 		}
 		i++;
-	}
-	if (result_number > 1)
-	{
-		error();
-		return ('0');
 	}
 	return (strategy);
 }
