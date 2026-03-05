@@ -6,12 +6,11 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:35:47 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/04 17:47:11 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/04 19:01:15 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 char	verify_commands(char *argv)
 {
@@ -66,7 +65,6 @@ t_list	*parsing_num(char ***splits)
 
 	stack_a = NULL;
 	i = -1;
-	// incrementation apres verification
 	while (splits[++i])
 	{
 		j = 0;
@@ -89,21 +87,17 @@ t_list	*parsing_num(char ***splits)
 
 char	parsing_strategy(char **argv)
 {
-	int	i;
+	int		i;
 	char	strategy;
-	char	result_number;
 
 	i = 0;
 	strategy = 'a';
-
-	result_number = 0;
 	while (argv[i] != NULL)
 	{
 		if (verify_commands(argv[i]) != '0')
 		{
 			strategy = verify_commands(argv[i]);
-			if (strategy != '0')
-				break;
+			return (strategy);
 		}
 		i++;
 	}
