@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:35:47 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/04 19:01:15 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/05 06:42:11 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,21 +85,24 @@ t_list	*parsing_num(char ***splits)
 	return (stack_a);
 }
 
-char	parsing_strategy(char **argv)
+char	parsing_strategy(char ***argv)
 {
 	int		i;
-	char	strategy;
+	int		j;
+	char	res;
 
 	i = 0;
-	strategy = 'a';
-	while (argv[i] != NULL)
+	while (argv && argv[i])
 	{
-		if (verify_commands(argv[i]) != '0')
+		j = 0;
+		while (argv[i][j])
 		{
-			strategy = verify_commands(argv[i]);
-			return (strategy);
+			res = verify_commands(argv[i][j]);
+			if (res != '0')
+				return (res);
+			j++;
 		}
 		i++;
 	}
-	return (strategy);
+	return ('a');
 }

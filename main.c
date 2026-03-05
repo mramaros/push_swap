@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/04 21:07:39 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/05 17:14:35 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,9 @@ int	main(int argc, char **argv)
 	if (!splits)
 		error();
 	stack_a = parsing_num(splits);
-	free_splits(splits);
-	strategy = parsing_strategy(argv);
+	if (!stack_a)
+		free_splits(splits);
+	strategy = parsing_strategy(splits);
 	if (!strategy)
 		strategy = 'a';
 	while (stack_a != NULL)
