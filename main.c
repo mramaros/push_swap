@@ -6,11 +6,13 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/05 17:14:35 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/06 12:54:07 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf/ft_printf.h"
 #include "push_swap.h"
+#include <stdio.h>
 
 static void	free_splits(char ***splits)
 {
@@ -36,6 +38,7 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	char	***splits;
+	double	disorder;
 
 	if (argc < 2)
 		return (0);
@@ -47,6 +50,7 @@ int	main(int argc, char **argv)
 	stack_a = parsing_num(splits);
 	if (!stack_a)
 		free_splits(splits);
+	disorder = compute_disorder(stack_a);
 	strategy = parsing_strategy(splits);
 	if (!strategy)
 		strategy = 'a';
@@ -55,6 +59,7 @@ int	main(int argc, char **argv)
 		ft_printf("%i ", *(int *)(stack_a)->content);
 		stack_a = stack_a->next;
 	}
-	ft_printf("\n%c", strategy);
+	ft_printf("\n%c\n", strategy);
 	ft_lstclear(&stack_a, free);
+	printf("%f\n", disorder);
 }
