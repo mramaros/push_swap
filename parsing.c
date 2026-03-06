@@ -6,10 +6,11 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:35:47 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/05 06:42:11 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/07 00:43:23 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf/libft/libft.h"
 #include "push_swap.h"
 
 char	verify_commands(char *argv)
@@ -25,8 +26,6 @@ char	verify_commands(char *argv)
 		command = 'c';
 	else if (ft_strncmp(argv, "--adaptive", 10) == 0)
 		command = 'a';
-	else if (ft_strncmp(argv, "--bench", 7) == 0)
-		command = 'b';
 	return (command);
 }
 
@@ -105,4 +104,24 @@ char	parsing_strategy(char ***argv)
 		i++;
 	}
 	return ('a');
+}
+
+int	search_bench(char ***argv)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	while (argv && argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if (ft_strncmp(argv[i][j], "--bench", 7) == 0)
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }

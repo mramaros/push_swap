@@ -1,0 +1,5 @@
+[bench] strategy:  adaptive / adaptive
+[bench] total_ops:	42
+[bench] sa:	125	sb:	45	ss:	32	pa:	45
+[bench] ra:	1254524	rb:	45	rr:	32	rra:	45	rrb:	68	rrr:	54
+[bench] disorder:  50.000000%

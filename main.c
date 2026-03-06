@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/06 17:27:06 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/07 00:39:10 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,11 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	char	***splits;
 	double	disorder;
+	char	strategy;
+	int		result_bench;
 
 	if (argc < 2)
 		return (0);
-	char	strategy;
 	stack_a = NULL;
 	splits = parsing_all(argc, argv);
 	if (!splits)
@@ -52,15 +53,8 @@ int	main(int argc, char **argv)
 		free_splits(splits);
 	disorder = compute_disorder(stack_a);
 	strategy = parsing_strategy(splits);
-	if (!strategy)
-		strategy = 'a';
-	while (stack_a != NULL)
-	{
-		ft_printf("%i ", *(int *)(stack_a)->content);
-		stack_a = stack_a->next;
-	}
-	ft_printf("\n%c\n", strategy);
+	result_bench = search_bench(splits);
+	if (result_bench == 1)
+		bench_print(disorder, strategy);
 	ft_lstclear(&stack_a, free);
-	printf("%f\n", disorder);
-	bench_print(disorder, strategy);
 }

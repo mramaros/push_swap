@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:54:23 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/06 17:26:24 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/07 00:22:45 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ char	***parsing_all(int argc, char **argv);
 t_list	*parsing_num(char ***splits);
 char	parsing_strategy(char ***argv);
 double	compute_disorder(t_list *a);
+int		search_bench(char ***argv);
 
-char *ft_print_strategy(char strategy);
-char *algo_print(char strategy);
+char	*ft_print_strategy(char strategy);
+char	*algo_print(char strategy);
 void	bench_print(double disorder, char strategy);
 
 long	ft_atoi_long(const char *nptr);
