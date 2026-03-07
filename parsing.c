@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:35:47 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/07 22:34:13 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/07 22:59:10 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ char	***parsing_all(int argc, char **argv)
 		return (NULL);
 	i = 1;
 	j = 0;
-	// size of argv
 	splits = (char ***)malloc((argc) * sizeof(char **));
 	if (!splits)
 		return (NULL);
@@ -126,4 +125,3 @@ int	search_bench(char ***argv)
 	}
 	return (0);
 }
-
