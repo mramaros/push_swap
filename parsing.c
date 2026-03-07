@@ -6,12 +6,13 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:35:47 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/07 00:43:23 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/07 22:34:13 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf/libft/libft.h"
 #include "push_swap.h"
+#include <ctype.h>
 
 char	verify_commands(char *argv)
 {
@@ -91,7 +92,7 @@ char	parsing_strategy(char ***argv)
 	char	res;
 
 	i = 0;
-	while (argv && argv[i])
+	while (argv[i] != NULL)
 	{
 		j = 0;
 		while (argv[i][j])
@@ -111,13 +112,13 @@ int	search_bench(char ***argv)
 	int		i;
 	int		j;
 
-	i = 0;
+	i = 1;
 	while (argv && argv[i])
 	{
 		j = 0;
 		while (argv[i][j])
 		{
-			if (ft_strncmp(argv[i][j], "--bench", 7) == 0)
+			if (ft_strncmp(argv[i][j], "--bench", 8) == 0)
 				return (1);
 			j++;
 		}
@@ -125,3 +126,4 @@ int	search_bench(char ***argv)
 	}
 	return (0);
 }
+
