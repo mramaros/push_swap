@@ -6,7 +6,7 @@
 /*   By: mramaros <mramaros@42antananarivo.mg>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 12:42:25 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/06 13:09:04 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/07 23:03:15 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -15,7 +15,7 @@ double	compute_disorder(t_list *a)
 {
 	t_list	*i;
 	t_list	*j;
-	int	mistakes;
+	int		mistakes;
 	int		total_pairs;
 
 	mistakes = 0;

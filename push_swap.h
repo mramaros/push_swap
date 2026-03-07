@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:54:23 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/07 22:47:06 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/07 23:17:09 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*parsing_num(char ***splits);
 char	parsing_strategy(char ***argv);
 double	compute_disorder(t_list *a);
 int		search_bench(char ***argv);
+void	free_splits(char ***splits);
 
 char	*ft_print_strategy(char strategy);
 char	*algo_print(char strategy);

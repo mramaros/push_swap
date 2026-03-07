@@ -3,97 +3,96 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
+/*   By: mramaros <mramaros@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/26 10:50:55 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/02/25 17:02:51 by ialrandr         ###   ########.fr       */
+/*   Created: 2026/01/27 11:07:17 by mramaros          #+#    #+#             */
+/*   Updated: 2026/02/04 10:18:34 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-static int	countwords(char *str, char c)
+static int	count_word(const char	*s, char c)
 {
-	int	words;
 	int	i;
-	int	inword;
+	int	k;
 
-	if (!str || !c)
+	i = 0;
+	k = 0;
+	if (!s)
 		return (0);
-	words = 0;
-	i = 0;
-	inword = 0;
-	while (str[i])
+	while (s[i])
 	{
-		if (str[i] != c && !inword)
-		{
-			inword = 1;
-			words++;
-		}
-		else if (str[i] == c)
-			inword = 0;
-		i++;
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+			k++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
-	return (words);
+	return (k);
 }
 
-static char	*find(char *s, char c)
+static char	*get_word(const char	*s, char c, int *i)
 {
-	char	*res;
-	int		i;
-	int		j;
-	int		lenght;
+	char	*str;
+	int		start;
+	int		k;
+	int		len;
 
-	i = 0;
-	lenght = 0;
-	while (s[i] && s[i] != c)
-	{
-		lenght++;
-		i++;
-	}
-	i = 0;
-	res = malloc(lenght + 1);
-	if (!res)
+	k = 0;
+	while (s[*i] && s[*i] == c)
+		(*i)++;
+	start = (*i);
+	while (s[*i] != c && s[*i] != '\0')
+		(*i)++;
+	len = (*i) - start;
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
-	j = 0;
-	while (j < lenght)
-		res[j++] = s[i++];
-	res[j] = '\0';
-	return (res);
+	while (k < len)
+	{
+		str[k] = s[start + k];
+		k++;
+	}
+	str[k] = '\0';
+	return (str);
 }
 
-static void	array_free(char **s, int index)
+static void	free_tab(char **tab, int j)
 {
-	while (index > 0)
-		free(s[--index]);
-	free(s);
+	while (j >= 0)
+	{
+		free (tab[j]);
+		j--;
+	}
+	free (tab);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**res;
-	size_t	i;
-	size_t	j;
-	size_t	words;
+	char	**tab;
+	int		i;
+	int		j;
+	int		count;
 
-	i = 0;
 	j = 0;
-	words = countwords((char *)s, c);
-	res = malloc((words + 1) * sizeof(char *));
-	if (!res)
+	i = 0;
+	if (!s)
 		return (NULL);
-	while (i < words && s[j])
+	count = count_word(s, c);
+	tab = malloc(sizeof(char *) * (count + 1));
+	if (!tab)
+		return (NULL);
+	while (j < count)
 	{
-		while (s[j] == c && s[j])
-			j++;
-		res[i] = find((char *)s + j, c);
-		if (!res[i])
+		tab[j] = get_word(s, c, &i);
+		if (!tab[j])
 		{
-			array_free(res, i);
+			free_tab(tab, j);
 			return (NULL);
 		}
-		j = j + (ft_strlen(res[i++]));
+		j++;
 	}
-	res[i] = NULL;
-	return (res);
+	tab[j] = NULL;
+	return (tab);
 }

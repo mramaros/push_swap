@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 17:02:13 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/03 21:49:40 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/07 23:00:24 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	*int_convertion(char *str)
 	*res = i_long;
 	return (res);
 }
+
 void	error(void)
 {
 	ft_putstr_fd("Error\n", 2);
@@ -68,6 +69,7 @@ int	duplicate(t_list **stack)
 	}
 	return (0);
 }
+
 int	is_int(char *str)
 {
 	int	i;

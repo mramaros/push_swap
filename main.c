@@ -6,14 +6,14 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/07 22:47:38 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/07 23:18:03 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-static void	free_splits(char ***splits)
+void	free_splits(char ***splits)
 {
 	int	i;
 	int	j;
@@ -46,7 +46,10 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	splits = parsing_all(argc, argv);
 	if (!splits)
+	{
+		free_splits(splits);
 		error();
+	}
 	verify_another_num_strategy(splits);
 	stack_a = parsing_num(splits);
 	if (!stack_a)
