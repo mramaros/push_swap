@@ -6,7 +6,7 @@
 /*   By: mramaros <mramaros@42antananarivo.mg>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 12:42:25 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/07 23:03:15 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/08 08:50:30 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -35,5 +35,5 @@ double	compute_disorder(t_list *a)
 	}
 	if (total_pairs == 0)
 		return (0.0);
-	return (((double)mistakes /total_pairs));
+	return (((double)mistakes / total_pairs));
 }
