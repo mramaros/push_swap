@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_a_movement.c                                  :+:      :+:    :+:   */
+/*   swap_and_rotate_movement.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mramaros <mramaros@42antananarivo.mg>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 09:03:21 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/08 14:51:01 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/08 14:53:14 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf/libft/libft.h"
 #include "push_swap.h"
-#include <stdio.h>
 
 t_list	*swap_a(t_list *stack_a)
 {
