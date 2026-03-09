@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   sequences_ab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/29 09:54:24 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/09 11:50:40 by ialrandr         ###   ########.fr       */
+/*   Created: 2026/03/09 13:48:23 by ialrandr          #+#    #+#             */
+/*   Updated: 2026/03/09 13:48:40 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	swap_ab(t_list **stack_a, t_list **stack_b)
 {
-	// if (!*lst)
-	// 	return ;
-	new->next = *lst;
-	*lst = new;
+	swap(stack_a);
+	swap(stack_b);
+}
+void	rotate_ab(t_list **stack_a, t_list **stack_b)
+{
+	rotate(stack_a);
+	rotate(stack_b);
+}
+
+void	reverse_rotate_ab(t_list **stack_a, t_list **stack_b)
+{
+	reverse_rotate(stack_a);
+	reverse_rotate(stack_b);
 }

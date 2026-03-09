@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:35:47 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/04 19:01:15 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/09 13:57:03 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,55 +30,45 @@ char	verify_commands(char *argv)
 	return (command);
 }
 
-char	***parsing_all(int argc, char **argv)
+char	**parsing_all(int argc, char **argv)
 {
-	char	***splits;
-	char	**res;
+	char	**splits;
+	char	*temp;
 	int		i;
-	int		j;
 
 	if (!argc || !argv)
-		return (NULL);
+		error();
 	i = 1;
-	j = 0;
-	// size of argv
-	splits = (char ***)malloc((argc) * sizeof(char **));
-	if (!splits)
-		return (NULL);
+	temp = "";
 	while (argv[i])
 	{
-		res = ft_split(argv[i], ' ');
-		splits[j] = res;
+		temp = ft_strjoin(temp, argv[i]);
+		temp = ft_strjoin(temp, " ");
 		i++;
-		j++;
 	}
-	splits[j] = NULL;
+	splits = ft_split(temp, ' ');
+	free(temp);
 	return (splits);
 }
 
-t_list	*parsing_num(char ***splits)
+t_list	*parsing_num(char **splits)
 {
 	t_list	*stack_a;
-	int		i;
-	int		j;
 	t_list	*number;
+	int		i;
 
 	stack_a = NULL;
-	i = -1;
-	while (splits[++i])
+	i = 0;
+	while (splits[i])
 	{
-		j = 0;
-		while (splits[i][j])
+		if (is_int(splits[i]))
 		{
-			if (is_int(splits[i][j]))
-			{
-				number = ft_lstnew(int_convertion(splits[i][j]));
-				if (!number)
-					lst_clear(&stack_a);
-				ft_lstadd_back(&stack_a, number);
-			}
-			j++;
+			number = ft_lstnew(int_convertion(splits[i]));
+			if (!number)
+				lst_clear(&stack_a);
+			ft_lstadd_back(&stack_a, number);
 		}
+		i++;
 	}
 	if (duplicate(&stack_a))
 		lst_clear(&stack_a);

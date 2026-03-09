@@ -6,26 +6,19 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/04 21:07:39 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/09 13:55:22 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	free_splits(char ***splits)
+static void	free_splits(char **splits)
 {
 	int	i;
-	int	j;
 
 	i = 0;
 	while (splits[i])
 	{
-		j = 0;
-		while (splits[i][j])
-		{
-			free(splits[i][j]);
-			j++;
-		}
 		free(splits[i]);
 		i++;
 	}
@@ -35,11 +28,11 @@ static void	free_splits(char ***splits)
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
-	char	***splits;
+	char	**splits;
+	char	strategy;
 
 	if (argc < 2)
 		return (0);
-	char	strategy;
 	stack_a = NULL;
 	splits = parsing_all(argc, argv);
 	if (!splits)
