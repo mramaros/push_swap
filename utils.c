@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 17:02:13 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/03 21:49:40 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/10 10:11:59 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 
 int	*int_convertion(char *str)
 {
-	int		i;
 	int		*res;
 	long	i_long;
 
-	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i = 1;
-	while (str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (NULL);
-		i++;
-	}
+	// int		i;
+	// i = 0;
+	// if (str[i] == '-' || str[i] == '+')
+	// 	i = 1;
+	// while (str[i])
+	// {
+	// 	if (!ft_isdigit(str[i]))
+	// 		return (NULL);
+	// 	i++;
+	// }
 	i_long = ft_atoi_long(str);
 	if (i_long < -2147483648 || i_long > 2147483647)
 		return (NULL);

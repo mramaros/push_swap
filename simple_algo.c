@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_algo.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:39:57 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/09 17:45:06 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/10 12:39:07 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include "push_swap.h"
 #include <unistd.h>
 
-int min_index(t_list **stack_a)
+int	min_index(t_list **stack_a)
 {
-	int index;
-	int index_min;
-	int min;
+	int	index;
+	int	index_min;
+	int	min;
 
 	index = -1;
 	min = *(int *)(*stack_a)->content;
@@ -35,12 +35,12 @@ int min_index(t_list **stack_a)
 	return (index_min);
 }
 
-void int_min_max(t_list **stack_a, t_list **stack_b)
+void	int_min_max(t_list **stack_a, t_list **stack_b)
 {
-	int index_min;
-	int size;
-	int i;
-	int j;
+	int		index_min;
+	int		size;
+	int		i;
+	int		j;
 	t_list	*tmp;
 
 	tmp = *stack_a;
@@ -53,6 +53,7 @@ void int_min_max(t_list **stack_a, t_list **stack_b)
 		while (j < index_min)
 		{
 			rotate(stack_a);
+			ft_printf("ra\n");
 			j++;
 		}
 	}
@@ -62,29 +63,40 @@ void int_min_max(t_list **stack_a, t_list **stack_b)
 		while (j < i)
 		{
 			reverse_rotate(stack_a);
+			ft_printf("rra\n");
+			j++;
+		}
+	}
+	else
+	{
+		j = 0;
+		while (j < index_min)
+		{
+			rotate(stack_a);
+			ft_printf("ra\n");
 			j++;
 		}
 	}
 	push(stack_a, stack_b);
+	ft_printf("pb\n");
 }
 
-t_list	*res(t_list **stack_a, t_list **stack_b)
+t_list	*simple(t_list **stack_a, t_list **stack_b)
 {
-	int size_a;
-	int size_b;
-
-	size_a = ft_lstsize(*stack_a);
-	size_b = ft_lstsize(*stack_b);
-	while (size_a > 1)
+	// int	size_a;
+	// int	size_b;
+	// size_a = ft_lstsize(*stack_a);
+	while (*stack_a)
 	{
 		int_min_max(stack_a, stack_b);
-		size_a = ft_lstsize(*stack_a);
+		// size_a = ft_lstsize(*stack_a);
 	}
-	while (size_b != 0)
+	// size_b = ft_lstsize(*stack_b);
+	while (*stack_b)
 	{
 		push(stack_b, stack_a);
-		size_b = ft_lstsize(*stack_b);
+		ft_printf("pa\n");
+		// size_b = ft_lstsize(*stack_b);
 	}
 	return (*stack_a);
 }
-

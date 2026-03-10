@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 11:05:22 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/09 14:29:26 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/10 12:35:53 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	push(t_list **stack_a, t_list **stack_b)
 		second_stack_a = first_stack_a->next;
 		*stack_a = second_stack_a;
 	}
+	else
+		*stack_a = NULL;
 	ft_lstadd_front(stack_b, first_stack_a);
 }
 
@@ -65,17 +67,13 @@ void	reverse_rotate(t_list **stack)
 	t_list	*last;
 	t_list	*temp;
 
-	if (!*stack)
-		return ;
 	first = *stack;
-	temp = *stack;
 	last = ft_lstlast(*stack);
+	temp = *stack;
 	while (temp->next != last)
 		temp = temp->next;
 	before_last = temp;
-	temp = first->next;
-	before_last->next = first;
-	first->next = NULL;
+	last->next = first;
 	*stack = last;
-	(*stack)->next = temp;
+	before_last->next = NULL;
 }
