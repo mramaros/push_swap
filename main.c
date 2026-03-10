@@ -6,10 +6,11 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/09 16:26:16 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/09 17:13:51 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf/libft/libft.h"
 #include "push_swap.h"
 
 static void	free_splits(char **splits)
@@ -30,10 +31,12 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	char	**splits;
 	char	strategy;
+	t_list	*stack_b;
 
 	if (argc < 2)
 		return (0);
 	stack_a = NULL;
+	stack_b = NULL;
 	splits = parsing_all(argc, argv);
 	if (!splits)
 		error();
@@ -42,6 +45,8 @@ int	main(int argc, char **argv)
 	strategy = parsing_strategy(splits);
 	if (!strategy)
 		strategy = 'a';
+	if (parsing_strategy(splits) == 's')
+		stack_a = res(&stack_a, &stack_b);
 	while (stack_a != NULL)
 	{
 		ft_printf("%i ", *(int *)(stack_a)->content);

@@ -6,7 +6,7 @@
 /*   By: mramaros <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:39:57 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/09 17:05:50 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/09 17:45:06 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,16 @@ int min_index(t_list **stack_a)
 	return (index_min);
 }
 
-t_list	*int_min_max(t_list **stack_a, t_list **stack_b)
+void int_min_max(t_list **stack_a, t_list **stack_b)
 {
 	int index_min;
 	int size;
 	int i;
 	int j;
+	t_list	*tmp;
 
-	index_min = min_index(stack_a);
+	tmp = *stack_a;
+	index_min = min_index(&tmp);
 	size = ft_lstsize(*stack_a);
 	i = size - index_min;
 	if (index_min < i)
@@ -64,6 +66,25 @@ t_list	*int_min_max(t_list **stack_a, t_list **stack_b)
 		}
 	}
 	push(stack_a, stack_b);
-	return (*stack_b);
+}
+
+t_list	*res(t_list **stack_a, t_list **stack_b)
+{
+	int size_a;
+	int size_b;
+
+	size_a = ft_lstsize(*stack_a);
+	size_b = ft_lstsize(*stack_b);
+	while (size_a > 1)
+	{
+		int_min_max(stack_a, stack_b);
+		size_a = ft_lstsize(*stack_a);
+	}
+	while (size_b != 0)
+	{
+		push(stack_b, stack_a);
+		size_b = ft_lstsize(*stack_b);
+	}
+	return (*stack_a);
 }
 

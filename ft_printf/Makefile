@@ -15,7 +15,7 @@ NAME = libftprintf.a
 SOURCE = ft_printf ft_printf_utils ft_printf_others\
 			ft_hex ft_ltoa
 
-C_FLAGS = -Wall -Wextra -Werror
+C_FLAGS = -Wall -Wextra -Werror -g
 
 OBJ_FILE = OBJ
 
