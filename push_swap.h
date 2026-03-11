@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:54:23 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/10 17:09:29 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/11 11:19:17 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char	**parsing_all(int argc, char **argv);
 t_list	*parsing_num(char **splits);
 char	parsing_strategy(char **argv);
 int		duplicate(t_list **stack);
+int		ft_strcmp(char *str1, char *str2);
 
 long	ft_atoi_long(const char *nptr);
 int		*int_convertion(char *str);

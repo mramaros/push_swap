@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:35:47 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/10 16:51:27 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/11 11:14:17 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ char	verify_commands(char *argv)
 	char	command;
 
 	command = '0';
-	if (ft_strncmp(argv, "--simple", 8) == 0)
+	if (ft_strcmp(argv, "--simple") == 0)
 		command = 's';
-	else if (ft_strncmp(argv, "--medium", 8) == 0)
+	else if (ft_strcmp(argv, "--medium") == 0)
 		command = 'm';
-	else if (ft_strncmp(argv, "--complex", 9) == 0)
+	else if (ft_strcmp(argv, "--complex") == 0)
 		command = 'c';
-	else if (ft_strncmp(argv, "--adaptive", 10) == 0)
+	else if (ft_strcmp(argv, "--adaptive") == 0)
 		command = 'a';
-	else if (ft_strncmp(argv, "--bench", 7) == 0)
+	else if (ft_strcmp(argv, "--bench") == 0)
 		command = 'b';
 	return (command);
 }

@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 13:48:23 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/10 16:51:40 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/11 10:18:04 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	swap_ab(t_list **stack_a, t_list **stack_b)
 	swap(stack_a);
 	swap(stack_b);
 }
+
 void	rotate_ab(t_list **stack_a, t_list **stack_b)
 {
 	rotate(stack_a);
