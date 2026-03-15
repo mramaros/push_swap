@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/10 16:51:44 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/15 11:13:38 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main(int argc, char **argv)
 	t_list	*stack_b;
 	char	**splits;
 	char	strategy;
+	double	disorder;
 
 	if (argc < 2)
 		return (0);
@@ -42,14 +43,20 @@ int	main(int argc, char **argv)
 	verify_another_num_strategy(splits);
 	stack_a = parsing_num(splits);
 	strategy = parsing_strategy(splits);
+	disorder = compute_disorder(stack_a);
+	if (!disorder)
+		return (0);
 	if (strategy == 's')
 		stack_a = simple(&stack_a, &stack_b);
-	while (stack_a != NULL)
-	{
-		ft_printf("%i ", *(int *)(stack_a)->content);
-		stack_a = stack_a->next;
-	}
-	ft_printf("\n%c", strategy);
+	if (strategy == 'c')
+		stack_a = radix(&stack_a, &stack_b);
+	// while (stack_a != NULL)
+	// {
+	// 	ft_printf("%i ", *(int *)(stack_a)->content);
+	// 	stack_a = stack_a->next;
+	// }
+	// bench_print(disorder, strategy);
+	// ft_printf("\n%c", strategy);
 	ft_lstclear(&stack_a, free);
 	free_splits(splits);
 }
