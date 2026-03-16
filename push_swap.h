@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:54:23 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/13 12:54:48 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/16 09:42:14 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ void	swap(t_list **stack);
 void	push(t_list **stack_a, t_list **stack_b);
 void	rotate(t_list **stack);
 void	reverse_rotate(t_list **stack);
+
+void	rotate_forward(t_list **stack_a, int cost_ra);
+void	rotate_backward(t_list **stack_a, int cost_rra);
 
 void	bench_print(double disorder, char strategy);
 

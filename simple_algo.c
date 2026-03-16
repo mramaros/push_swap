@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:39:57 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/10 17:08:49 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/16 10:16:59 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	min_index(t_list **stack_a)
 	return (index_min);
 }
 
-static void	rotate_forward_to_min(t_list **stack_a, int cost_ra)
+void	rotate_forward(t_list **stack_a, int cost_ra)
 {
 	int	i;
 
@@ -46,7 +46,7 @@ static void	rotate_forward_to_min(t_list **stack_a, int cost_ra)
 	}
 }
 
-static void	rotate_backward_to_min(t_list **stack_a, int cost_rra)
+void	rotate_backward(t_list **stack_a, int cost_rra)
 {
 	int	i;
 
@@ -71,11 +71,11 @@ static void	int_min_max(t_list **stack_a, t_list **stack_b)
 	size = ft_lstsize(*stack_a);
 	i = size - index_min;
 	if (index_min < i)
-		rotate_forward_to_min(stack_a, index_min);
+		rotate_forward(stack_a, index_min);
 	else if (i < index_min)
-		rotate_backward_to_min(stack_a, i);
+		rotate_backward(stack_a, i);
 	else
-		rotate_forward_to_min(stack_a, index_min);
+		rotate_forward(stack_a, index_min);
 	push(stack_a, stack_b);
 	ft_printf("pb\n");
 }
