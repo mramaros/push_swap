@@ -1,11 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_parsing.c                                 :+:      :+:    :+:   */
+/*   tab_assignation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <mramaros@42antananarivo.mg>      +#+  +:+       +#+        */
+/*   By: mramaros <mramaros@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/07 00:13:08 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/08 08:51:15 by mramaros         ###   ########.fr       */
+/*   Created: 2026/03/11 17:43:36 by mramaros          #+#    #+#             */
+/*   Updated: 2026/03/11 18:12:18 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+void	tab_content(int *tab)
+{
+	int		i;
+
+	i = 1;
+	tab[1] = 0;
+	tab[2] = 0;
+	tab[3] = 0;
+	tab[4] = 0;
+	tab[5] = 0;
+	tab[6] = 0;
+	tab[7] = 0;
+	tab[8] = 0;
+	tab[9] = 0;
+	tab[10] = 0;
+	tab[11] = 0;
+	tab[12] = 0;
+}

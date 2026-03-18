@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 12:37:32 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/01 17:13:50 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/18 09:25:25 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 typedef struct s_list
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
-
+    void            *content;
+    struct s_list   *next;
+    void            *index;
+}   t_list;
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);

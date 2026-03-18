@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_mouvement.c                                   :+:      :+:    :+:   */
+/*   verify_bench.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mramaros <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/08 15:02:09 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/08 15:24:42 by mramaros         ###   ########.fr       */
+/*   Created: 2026/03/11 13:24:35 by mramaros          #+#    #+#             */
+/*   Updated: 2026/03/11 13:26:13 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_a(t_list **stack_a, t_list **stack_b)
+int	search_bench(char **argv)
 {
-	t_list	*tmp;
+	int		i;
 
-	if (!*stack_b)
-		return ;
-	tmp = *stack_b;
-	*stack_b = (*stack_b)->next;
-	tmp->next = *stack_a;
-	*stack_a = tmp;
-}
-
-void	push_b(t_list **stack_a, t_list **stack_b)
-{
-	t_list	*tmp;
-
-	if (!*stack_a)
-		return ;
-	tmp = *stack_a;
-	*stack_a = (*stack_a)->next;
-	tmp->next = *stack_b;
-	*stack_b = tmp;
+	i = 0;
+	while (argv[i])
+	{
+		if (ft_strcmp(argv[i], "--bench") == 0)
+			return (1);
+		i++;
+	}
+	return (0);
 }

@@ -3,31 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   verify_another_num_strategy.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <mramaros@42antananarivo.mg>      +#+  +:+       +#+        */
+/*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 22:35:28 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/07 22:57:11 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/11 10:17:06 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	verify_another_num_strategy(char ***splits)
+void	verify_another_num_strategy(char **splits)
 {
-	int	i;
 	int	j;
 
-	i = 0;
-	while (splits[i])
+	j = 0;
+	while (splits[j])
 	{
-		j = 0;
-		while (splits[i][j])
-		{
-			if (!is_int(splits[i][j]) && verify_commands(splits[i][j]) == '0' &&
-					(ft_strncmp(splits[i][j], "--bench", 8)))
-				error();
-			j++;
-		}
-		i++;
+		if (!is_int(splits[j]) && verify_commands(splits[j]) == '0'
+			&& (ft_strncmp(splits[j], "--bench", 8)))
+			error();
+		j++;
 	}
 }

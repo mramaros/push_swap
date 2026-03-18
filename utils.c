@@ -6,18 +6,30 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 17:02:13 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/07 23:00:24 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/18 09:15:49 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	*int_convertion(char *str)
 {
-	int		i;
 	int		*res;
 	long	i_long;
+
+	i_long = ft_atoi_long(str);
+	if (i_long < -2147483648 || i_long > 2147483647)
+		error();
+	res = (int *)malloc(sizeof(int));
+	if (!res)
+		error();
+	*res = i_long;
+	return (res);
+}
+
+int	is_int(char *str)
+{
+	int	i;
 
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
@@ -25,17 +37,10 @@ int	*int_convertion(char *str)
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
-			return (NULL);
+			return (0);
 		i++;
 	}
-	i_long = ft_atoi_long(str);
-	if (i_long < -2147483648 || i_long > 2147483647)
-		return (NULL);
-	res = (int *)malloc(sizeof(int));
-	if (!res)
-		return (NULL);
-	*res = i_long;
-	return (res);
+	return (1);
 }
 
 void	error(void)
@@ -68,20 +73,4 @@ int	duplicate(t_list **stack)
 		temp = temp->next;
 	}
 	return (0);
-}
-
-int	is_int(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i = 1;
-	while (str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (0);
-		i++;
-	}
-	return (1);
 }

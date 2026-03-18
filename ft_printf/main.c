@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   simple_algo_insert_sort.c                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mramaros <mramaros@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/08 14:59:15 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/08 15:01:54 by mramaros         ###   ########.fr       */
+/*   Created: 2026/03/11 21:16:51 by mramaros          #+#    #+#             */
+/*   Updated: 2026/03/11 21:17:52 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	insert_sort(t_list *stack_a, t_list *stack_b)
+#include "ft_printf.h"
+int main(void)
 {
-	t_list	*tmp;
+	double	test;
 
-
+	test = 12.333333;
+	ft_printf("%f\n", test);
 }
