@@ -6,118 +6,92 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 09:40:54 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/16 11:37:57 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/17 18:24:47 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_list	*long_convertion(t_list **stack_a)
+static int	*indexes(t_list **stack_a)
 {
-	t_list	*temp;
+	t_list	*current_node;
+	t_list	*iter_node;
+	int		i;
+	int		size;
+	int		*indexes;
 
-	temp = *stack_a;
-	while (temp)
-	{
-		*(long *)temp->content = (long)2147483648 + *(int *)temp->content;
-		temp = temp->next;
-	}
-	return (*stack_a);
-}
-
-static t_list	*back_to_normal(t_list **stack_a)
-{
-	t_list	*temp;
-
-	temp = *stack_a;
-	while (temp)
-	{
-		*(int *)temp->content = *(long *)temp->content - (long)2147483648;
-		temp = temp->next;
-	}
-	return (*stack_a);
-}
-
-static int	*value_counter(t_list **stack_a, int pass)
-{
-	t_list	*temp;
-	int		*table;
-	int		index;
-
-	temp = *stack_a;
-	table = ft_calloc(256, sizeof(int));
-	if (!table)
+	size = ft_lstsize(*stack_a);
+	indexes = ft_calloc(size, sizeof(int));
+	if (!indexes)
 		error();
-	while (temp)
-	{
-		index = (((*(long *)temp->content) >> (pass * 8)) & 0xFF);
-		table[index]++;
-		temp = temp->next;
-	}
-	return (table);
-}
-
-static int	search_index(t_list **stack_a, int i, int pass)
-{
-	int		index;
-	t_list	*temp;
-
-	index = -1;
-	temp = *stack_a;
-	while (temp)
-	{
-		index++;
-		if (((*(long *)temp->content >> (pass * 8)) & 0xFF) == i)
-			return (index);
-		temp = temp->next;
-	}
-	return (-1);
-}
-
-static void	algo(t_list **stack_a, t_list **stack_b, int *table, int pass)
-{
-	int	i;
-	int	j;
-	int	size;
-	int	index;
-
 	i = 0;
-	while (i < 256)
+	current_node = *stack_a;
+	while (i < size)
 	{
-		if (table[i])
+		iter_node = *stack_a;
+		while (iter_node)
 		{
-			size = ft_lstsize(*stack_a);
-			j = 0;
-			while (j < table[i])
-			{
-				index = search_index(stack_a, i, pass);
-				if (index == -1)
-				{
-					ft_printf("index = -1, error");
-					return ;
-				}
-				if (index < size - index)
-				{
-					rotate_forward(stack_a, index);
-					push(stack_a, stack_b);
-					ft_printf("pb\n");
-				}
-				else if (size - index < index)
-				{
-					rotate_backward(stack_a, size - index);
-					push(stack_a, stack_b);
-					ft_printf("pb\n");
-				}
-				else
-				{
-					rotate_forward(stack_a, index);
-					push(stack_a, stack_b);
-					ft_printf("pb\n");
-				}
-				j++;
-			}
+			if (*(int *)iter_node->content < *(int *)current_node->content)
+				indexes[i]++;
+			iter_node = iter_node->next;
 		}
 		i++;
+		current_node = current_node->next;
+	}
+	return (indexes);
+}
+
+static t_list	*stack_to_index(t_list **stack_a, int *list)
+{
+	int		i;
+	t_list	*temp;
+
+	i = 0;
+	temp = *stack_a;
+	while (temp)
+	{
+		*(int *)temp->content = list[i];
+		i++;
+		temp = temp->next;
+	}
+	return (*stack_a);
+}
+
+static int	bits_count(t_list **stack_a)
+{
+	int	max_num;
+	int	bits_count;
+
+	bits_count = 0;
+	max_num = ft_lstsize(*stack_a) - 1;
+	while (max_num != 0)
+	{
+		bits_count++;
+		max_num = max_num >> 1;
+	}
+	return (bits_count);
+}
+
+static void	radix(t_list **stack_a, t_list **stack_b, int i)
+{
+	int	j;
+	int	size;
+
+	j = 0;
+	size = ft_lstsize(*stack_a);
+	while (j < size)
+	{
+		if (((*(int *)(*stack_a)->content >> i) & 1) == 0)
+		{
+			push(stack_a, stack_b);
+			ft_printf("pb\n");
+		}
+		else
+		{
+			rotate(stack_a);
+			ft_printf("ra\n");
+		}
+		j++;
 	}
 	while (*stack_b)
 	{
@@ -126,20 +100,21 @@ static void	algo(t_list **stack_a, t_list **stack_b, int *table, int pass)
 	}
 }
 
-t_list	*radix(t_list **stack_a, t_list **stack_b)
+t_list	*complex(t_list **stack_a, t_list **stack_b)
 {
+	int	*list;
+	int	bits;
 	int	i;
-	int	*table;
 
+	list = indexes(stack_a);
+	*stack_a = stack_to_index(stack_a, list);
+	bits = bits_count(stack_a);
 	i = 0;
-	*stack_a = long_convertion(stack_a);
-	while (i < 4)
+	while (i < bits)
 	{
-		table = value_counter(stack_a, i);
-		algo(stack_a, stack_b, table, i);
+		radix(stack_a, stack_b, i);
 		i++;
-		free(table);
 	}
-	back_to_normal(stack_a);
+	free(list);
 	return (*stack_a);
 }

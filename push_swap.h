@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:54:23 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/16 09:42:14 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/17 17:03:17 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	verify_commands(char *argv);
 void	verify_another_num_strategy(char **splits);
 
 t_list	*simple(t_list **stack_a, t_list **stack_b);
-t_list *radix(t_list **stack_a, t_list **stack_b);
+t_list	*complex(t_list **stack_a, t_list **stack_b);
 
 void	swap(t_list **stack);
 void	push(t_list **stack_a, t_list **stack_b);

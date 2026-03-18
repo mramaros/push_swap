@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/16 10:14:19 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/17 17:04:06 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main(int argc, char **argv)
 	if (strategy == 's')
 		stack_a = simple(&stack_a, &stack_b);
 	if (strategy == 'c')
-		stack_a = radix(&stack_a, &stack_b);
+		stack_a = complex(&stack_a, &stack_b);
 	while (stack_a != NULL)
 	{
 		ft_printf("%i ", *(int *)(stack_a)->content);

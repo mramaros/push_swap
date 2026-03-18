@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 17:02:13 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/11 10:21:41 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/18 08:46:32 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	*int_convertion(char *str)
 
 	i_long = ft_atoi_long(str);
 	if (i_long < -2147483648 || i_long > 2147483647)
-		return (NULL);
+		error();
 	res = (int *)malloc(sizeof(int));
 	if (!res)
-		return (NULL);
+		error();
 	*res = i_long;
 	return (res);
 }

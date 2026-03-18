@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:39:57 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/16 10:16:59 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/17 15:03:09 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,23 @@
 
 static int	min_index(t_list **stack_a)
 {
-	int	index;
-	int	index_min;
-	int	min;
+	int		index;
+	int		index_min;
+	int		min;
+	t_list	*temp;
 
+	temp = *stack_a;
 	index = -1;
-	min = *(int *)(*stack_a)->content;
-	while (*stack_a != NULL)
+	min = *(int *)temp->content;
+	while (temp != NULL)
 	{
 		index++;
-		if (*(int *)(*stack_a)->content < min)
+		if (*(int *)temp->content < min)
 		{
-			min = *(int *)(*stack_a)->content;
+			min = *(int *)temp->content;
 			index_min = index;
 		}
-		*stack_a = (*stack_a)->next;
+		temp = temp->next;
 	}
 	return (index_min);
 }
@@ -61,13 +63,11 @@ void	rotate_backward(t_list **stack_a, int cost_rra)
 
 static void	int_min_max(t_list **stack_a, t_list **stack_b)
 {
-	int		index_min;
-	int		size;
-	int		i;
-	t_list	*tmp;
+	int	index_min;
+	int	size;
+	int	i;
 
-	tmp = *stack_a;
-	index_min = min_index(&tmp);
+	index_min = min_index(stack_a);
 	size = ft_lstsize(*stack_a);
 	i = size - index_min;
 	if (index_min < i)
