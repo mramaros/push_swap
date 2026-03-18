@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:35:47 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/18 10:30:52 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/18 15:48:41 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ t_list	*parsing_num(char **splits)
 		}
 		i++;
 	}
+	if (!stack_a)
+		error();
 	if (duplicate(&stack_a))
 		lst_clear(&stack_a);
 	return (stack_a);
