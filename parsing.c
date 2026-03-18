@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:35:47 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/18 15:48:41 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/18 16:45:22 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ t_list	*parsing_num(char **splits)
 	int		i;
 
 	stack_a = NULL;
-	i = 0;
-	while (splits[i])
+	i = -1;
+	while (splits[++i])
 	{
 		if (is_int(splits[i]))
 		{
@@ -72,10 +72,7 @@ t_list	*parsing_num(char **splits)
 			number->index = NULL;
 			ft_lstadd_back(&stack_a, number);
 		}
-		i++;
 	}
-	if (!stack_a)
-		error();
 	if (duplicate(&stack_a))
 		lst_clear(&stack_a);
 	return (stack_a);

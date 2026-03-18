@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/18 10:47:26 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/18 17:16:53 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,7 @@ int	main(int argc, char **argv)
 	tab_content(tab);
 	splits = parsing_all(argv);
 	if (!splits)
-	{
-		free_splits(splits);
 		error();
-	}
 	verify_another_num_strategy(splits);
 	stack_a = parsing_num(splits);
 	if (!stack_a)
@@ -58,7 +55,7 @@ int	main(int argc, char **argv)
 		medium_algo(&stack_a, &stack_b, tab);
 	else if (strategy == 'c' && disorder != 0)
 		complex(&stack_a, &stack_b, tab);
-	else if (strategy == 'a'&& disorder != 0)
+	else if (strategy == 'a' && disorder != 0)
 		strategy = adaptive_algo(&stack_a, &stack_b, disorder, tab);
 	result_bench = search_bench(splits);
 	if (result_bench == 1)

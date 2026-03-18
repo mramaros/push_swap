@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 09:40:54 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/18 10:12:59 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/18 17:34:35 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,12 +95,7 @@ static void	radix(t_list **stack_a, t_list **stack_b, int i, int *tab)
 		}
 		j++;
 	}
-	while (*stack_b)
-	{
-		push(stack_b, stack_a);
-		ft_printf("pa\n");
-		tab[4]++;
-	}
+	push_loop(stack_a, stack_b, tab);
 }
 
 void	complex(t_list **stack_a, t_list **stack_b, int *tab)

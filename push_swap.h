@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:54:23 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/18 10:40:58 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/18 17:34:14 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_chunk
 	int	max;
 	int	needed;
 	int	pushed;
-}				t_chunk;
+}		t_chunk;
 
 char	**parsing_all(char **argv);
 t_list	*parsing_num(char **splits);
@@ -28,6 +28,7 @@ char	parsing_strategy(char **argv);
 int		duplicate(t_list **stack);
 int		ft_strcmp(char *str1, char *str2);
 double	compute_disorder(t_list *a);
+void	free_splits(char **splits);
 
 long	ft_atoi_long(const char *nptr);
 int		*int_convertion(char *str);
@@ -63,9 +64,10 @@ void	push_back_to_a(t_list **stack_a, t_list **stack_b, int *tab);
 void	medium_algo(t_list **stack_a, t_list **stack_b, int *tab);
 
 void	complex(t_list **stack_a, t_list **stack_b, int *tab);
+void	push_loop(t_list **stack_a, t_list **stack_b, int *tab);
 
 char	adaptive_algo(t_list **stack_a, t_list **stack_b, double disorder,
-		 int *tab);
+			int *tab);
 
 void	swap(t_list **stack);
 void	push(t_list **stack_a, t_list **stack_b);
