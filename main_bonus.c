@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
+/*   By: ialrandr <ialrandr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 17:19:03 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/19 09:53:30 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/19 16:33:17 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int	main(int argc, char **argv)
 		error();
 	verify_another_num_strategy(splits);
 	stack_a = parsing_num(splits);
+	if (parsing_strategy(splits))
+		error();
 	stack_b = NULL;
 	if (!stack_a)
 	{
