@@ -28,7 +28,7 @@ char	parsing_strategy(char **argv);
 int		duplicate(t_list **stack);
 int		ft_strcmp(char *str1, char *str2);
 double	compute_disorder(t_list *a);
-void	free_splits(char **splits);
+void	free_splits(char **splits, t_list **stack_a);
 
 long	ft_atoi_long(const char *nptr);
 int		*int_convertion(char *str);

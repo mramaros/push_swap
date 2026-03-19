@@ -12,7 +12,7 @@
 
 #include "checker_bonus.h"
 
-void	free_splits(char **splits)
+static void	free_splits_bonus(char **splits)
 {
 	int	i;
 
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (!stack_a)
 	{
-		free_splits(splits);
+		free_splits_bonus(splits);
 		exit(EXIT_FAILURE);
 	}
 	checker(&stack_a, &stack_b);

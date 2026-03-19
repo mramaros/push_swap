@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 09:40:54 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/18 17:34:35 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:25:03 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,13 +84,13 @@ static void	radix(t_list **stack_a, t_list **stack_b, int i, int *tab)
 		if (((*(int *)(*stack_a)->content >> i) & 1) == 0)
 		{
 			push(stack_a, stack_b);
-			ft_printf("pb\n");
+			ft_printf(1, "pb\n");
 			tab[5]++;
 		}
 		else
 		{
 			rotate(stack_a);
-			ft_printf("ra\n");
+			ft_printf(1, "ra\n");
 			tab[6]++;
 		}
 		j++;

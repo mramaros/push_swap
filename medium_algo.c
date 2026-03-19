@@ -6,7 +6,7 @@
 /*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 20:18:39 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/19 11:23:26 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:25:36 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	push_back_to_a(t_list **stack_a, t_list **stack_b, int *tab)
 		pos = find_index_in_b(*stack_b, target);
 		bring_to_top(stack_b, pos, size, tab);
 		push(stack_b, stack_a);
-		ft_printf("pa\n");
+		ft_printf(1, "pa\n");
 		tab[4]++;
 		size--;
 		target--;

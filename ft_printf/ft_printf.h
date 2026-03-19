@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 13:57:24 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/19 11:15:33 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/19 08:46:34 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int		ft_printf(const char *string, ...);
-int		character_check(int c, va_list ap);
+int		ft_printf(int fd, const char *string, ...);
+int		character_check(int fd, int c, va_list ap);
 char	*ft_hex(unsigned long n, char c);
 char	*ft_ltoa(long nbr);
-size_t	char_c(char c);
-size_t	char_s(char *str);
-size_t	char_p(unsigned long n);
-size_t	char_d(int n);
+size_t	char_c(int fd, char c);
+size_t	char_s(int fd, char *str);
+size_t	char_p(int fd, unsigned long n);
+size_t	char_d(int fd, int n);
 size_t	char_u(unsigned int n);
 size_t	char_x(unsigned int n, char c);
-int		char_f(double nbr);
+int		char_f(int fd, double nbr);
 
 #endif

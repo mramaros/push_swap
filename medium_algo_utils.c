@@ -6,7 +6,7 @@
 /*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 06:18:29 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/19 11:23:24 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:27:06 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ static void	do_push_or_rotate(t_list **stack_a, t_list **stack_b, t_chunk *c,
 	if (idx >= c->min && idx <= c->max)
 	{
 		push(stack_a, stack_b);
-		ft_printf("pb\n");
+		ft_printf(1, "pb\n");
 		tab[5]++;
 		c->pushed++;
 	}
 	else
 	{
 		rotate(stack_a);
-		ft_printf("ra\n");
+		ft_printf(1, "ra\n");
 		tab[6]++;
 	}
 }
@@ -82,7 +82,7 @@ void	bring_to_top(t_list **stack_b, int pos, int size, int *tab)
 		while (pos-- > 0)
 		{
 			rotate(stack_b);
-			ft_printf("rb\n");
+			ft_printf(1, "rb\n");
 			tab[7]++;
 		}
 	}
@@ -92,7 +92,7 @@ void	bring_to_top(t_list **stack_b, int pos, int size, int *tab)
 		while (pos-- > 0)
 		{
 			reverse_rotate(stack_b);
-			ft_printf("rrb\n");
+			ft_printf(1, "rrb\n");
 			tab[10]++;
 		}
 	}

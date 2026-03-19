@@ -6,7 +6,7 @@
 /*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:39:57 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/19 11:23:47 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:26:40 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	rotate_forward_to_min(t_list **stack_a, int cost_ra, int *tab)
 	{
 		rotate(stack_a);
 		tab[6]++;
-		ft_printf("ra\n");
+		ft_printf(1, "ra\n");
 		i++;
 	}
 }
@@ -57,7 +57,7 @@ void	rotate_backward_to_min(t_list **stack_a, int cost_rra, int *tab)
 	{
 		reverse_rotate(stack_a);
 		tab[9]++;
-		ft_printf("rra\n");
+		ft_printf(1, "rra\n");
 		i++;
 	}
 }
@@ -81,7 +81,7 @@ static void	int_min_max(t_list **stack_a, t_list **stack_b, int *tab)
 		rotate_forward_to_min(stack_a, index_min, tab);
 	push(stack_a, stack_b);
 	tab[5]++;
-	ft_printf("pb\n");
+	ft_printf(1, "pb\n");
 }
 
 t_list	*simple(t_list **stack_a, t_list **stack_b, int *tab)
@@ -92,7 +92,7 @@ t_list	*simple(t_list **stack_a, t_list **stack_b, int *tab)
 	{
 		push(stack_b, stack_a);
 		tab[4]++;
-		ft_printf("pa\n");
+		ft_printf(1, "pa\n");
 	}
 	return (*stack_a);
 }

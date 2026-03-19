@@ -46,13 +46,13 @@ static void	run_sequence(t_list **stack_a, t_list **stack_b, char *line)
 
 static void	fail(void)
 {
-	ft_printf("KO\n");
+	ft_printf(1, "KO\n");
 	exit(EXIT_FAILURE);
 }
 
 static void	success(void)
 {
-	ft_printf("OK\n");
+	ft_printf(1, "OK\n");
 	exit(EXIT_SUCCESS);
 }
 

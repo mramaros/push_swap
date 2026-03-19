@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_for_hundred.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
+/*   By: mramaros <mramaros@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 20:20:28 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/19 11:43:37 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/19 08:58:34 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "ft_printf.h"
 
-int	char_f(double n)
+int	char_f(int fd, double n)
 {
 	long	int_part;
 	double	decimal;
@@ -22,15 +21,18 @@ int	char_f(double n)
 	count = 0;
 	int_part = (long)n;
 	decimal = n - int_part;
-	count += char_d(int_part);
-	count += char_c('.');
+
+	count += char_d(fd,int_part);
+	count += char_c(fd, '.');
+
 	if (decimal < 0)
 		decimal = -decimal;
+
 	i = 0;
-	while (i < 6)
+	while (i < 2)
 	{
 		decimal *= 10;
-		count += char_c((int)decimal + '0');
+		count += char_c(fd, (int)decimal + '0');
 		decimal -= (int)decimal;
 		i++;
 	}
