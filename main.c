@@ -20,9 +20,9 @@ void	free_splits(char **splits, t_list **stack_a)
 
 	i = 0;
 	tab = ft_calloc(13, sizeof(int));
-	ft_lstclear(stack_a, free);
-	if (search_bench(splits) == 1)
+	if (search_bench(splits) == 1 && !*stack_a)
 		bench_print(0, 'a', tab);
+	ft_lstclear(stack_a, free);
 	while (splits[i])
 	{
 		free(splits[i]);
