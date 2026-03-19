@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   tab_assignation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <mramaros@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:43:36 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/11 18:12:18 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/19 11:23:53 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	tab_content(int *tab)
 {
-	int		i;
+	int	i;
 
 	i = 1;
 	tab[1] = 0;

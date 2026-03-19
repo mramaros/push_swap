@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   disorder_count.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <mramaros@42antananarivo.mg>      +#+  +:+       +#+        */
+/*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 12:42:25 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/08 08:50:30 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/19 11:22:40 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap.h"
 
 double	compute_disorder(t_list *a)
 {

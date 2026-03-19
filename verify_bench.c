@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verify_bench.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 13:24:35 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/11 13:26:13 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/19 11:24:05 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	search_bench(char **argv)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (argv[i])

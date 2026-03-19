@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verify_another_num_strategy.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
+/*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 22:35:28 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/11 10:17:06 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/19 11:24:02 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium_index_assignment.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <mramaros@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 14:58:13 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/16 23:28:08 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/19 11:23:28 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

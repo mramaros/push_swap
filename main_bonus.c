@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 17:19:03 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/18 18:09:36 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/19 09:53:30 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	main(int argc, char **argv)
 		error();
 	verify_another_num_strategy(splits);
 	stack_a = parsing_num(splits);
+	stack_b = NULL;
 	if (!stack_a)
 	{
 		free_splits(splits);

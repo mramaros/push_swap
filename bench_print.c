@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <mramaros@42antananarivo.mg>      +#+  +:+       +#+        */
+/*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 13:12:34 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/18 10:43:04 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/19 11:22:26 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_print_strategy(char strategy)
 	return ("adaptive");
 }
 
-static void	total_check(int	*tab)
+static void	total_check(int *tab)
 {
 	int	i;
 
@@ -48,16 +48,16 @@ static void	total_check(int	*tab)
 	}
 }
 
-void	bench_print(double disorder, char strategy, int	*tab)
+void	bench_print(double disorder, char strategy, int *tab)
 {
 	total_check(tab);
-
 	ft_printf("[bench] disorder:  %f%%\n", (disorder * 100));
 	ft_printf("[bench] strategy:  %s / %s\n", ft_print_strategy(strategy),
 		algo_print(strategy));
 	ft_printf("[bench] total_ops:\t%d\n", tab[12]);
-	ft_printf("[bench] sa:\t%d\tsb:\t%d\tss:\t%d\tpa:\t%d\tpb:\t%d\n", tab[1], tab[2], tab[3], tab[4], tab[5]);
-	ft_printf("[bench] ra:\t%d\trb:\t%d\trr:\t%d\trra:\t%d\t", tab[6], tab[7], tab[8], tab[9]);
+	ft_printf("[bench] sa:\t%d\tsb:\t%d\tss:\t%d\tpa:\t%d\tpb:\t%d\n", tab[1],
+		tab[2], tab[3], tab[4], tab[5]);
+	ft_printf("[bench] ra:\t%d\trb:\t%d\trr:\t%d\trra:\t%d\t", tab[6], tab[7],
+		tab[8], tab[9]);
 	ft_printf("rrb:\t%d\trrr:\t%d\n", tab[10], tab[11]);
 }
-

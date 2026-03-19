@@ -6,11 +6,21 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 15:31:04 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/18 18:05:59 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/19 10:41:53 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
+
+static void	seq_ab(t_list **stack_a, t_list **stack_b, char *line)
+{
+	if (!ft_strcmp(line, "ss\n"))
+		swap_ab(stack_a, stack_b);
+	else if (!ft_strcmp(line, "rr\n"))
+		rotate_ab(stack_a, stack_b);
+	else if (!ft_strcmp(line, "rrr\n"))
+		reverse_rotate_ab(stack_a, stack_b);
+}
 
 static void	run_sequence(t_list **stack_a, t_list **stack_b, char *line)
 {
@@ -26,6 +36,12 @@ static void	run_sequence(t_list **stack_a, t_list **stack_b, char *line)
 		rotate(stack_b);
 	else if (!ft_strcmp(line, "rrb\n"))
 		reverse_rotate(stack_b);
+	else if (!ft_strcmp(line, "sa\n"))
+		swap(stack_a);
+	else if (!ft_strcmp(line, "sb\n"))
+		swap(stack_b);
+	else
+		seq_ab(stack_a, stack_b, line);
 }
 
 static void	fail(void)

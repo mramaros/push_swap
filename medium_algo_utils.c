@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium_algo_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <mramaros@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 06:18:29 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/15 20:32:54 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/19 11:23:24 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void	assing_index(t_list **stack_a)
 	free(result);
 }
 
-static void	do_push_or_rotate(t_list **stack_a, t_list **stack_b,
-				t_chunk *c, int *tab)
+static void	do_push_or_rotate(t_list **stack_a, t_list **stack_b, t_chunk *c,
+		int *tab)
 {
 	int	idx;
 

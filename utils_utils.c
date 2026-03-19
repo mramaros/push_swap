@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <mramaros@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 07:01:05 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/18 07:10:44 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/19 11:23:55 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
