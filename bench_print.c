@@ -6,7 +6,7 @@
 /*   By: mramaros <mramaros@42antananarivo.mg>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 13:12:34 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/19 14:31:12 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/19 15:16:06 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*algo_print(char strategy)
 		return ("O(n√n)");
 	else if (strategy == 'c' || strategy == 'C')
 		return ("O(n log n)");
-	return ("adaptive");
+	return ("");
 }
 
 char	*ft_print_strategy(char strategy)

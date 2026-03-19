@@ -6,24 +6,30 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/19 15:08:56 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/19 15:14:08 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf/libft/libft.h"
 #include "push_swap.h"
 
 void	free_splits(char **splits, t_list **stack_a)
 {
 	int	i;
+	int	*tab;
 
 	i = 0;
+	tab = ft_calloc(13, sizeof(int));
 	ft_lstclear(stack_a, free);
+	if (search_bench(splits) == 1)
+		bench_print(0, 'a', tab);
 	while (splits[i])
 	{
 		free(splits[i]);
 		i++;
 	}
 	free(splits);
+	free (tab);
 	exit(EXIT_FAILURE);
 }
 
