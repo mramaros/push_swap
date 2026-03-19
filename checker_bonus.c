@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 15:31:04 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/19 10:41:53 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/19 12:28:47 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,13 @@ void	checker(t_list **stack_a, t_list **stack_b)
 	disorder = compute_disorder(*stack_a);
 	if (!disorder)
 		success();
-	while ((line = get_next_line(0)))
+	line = get_next_line(0);
+	while (line)
+	{
 		run_sequence(stack_a, stack_b, line);
+		free(line);
+		line = get_next_line(0);
+	}
 	disorder = compute_disorder(*stack_a);
 	if (!disorder && !*stack_b)
 		success();

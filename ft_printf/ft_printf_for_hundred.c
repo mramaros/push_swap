@@ -6,9 +6,11 @@
 /*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 20:20:28 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/19 11:21:54 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/19 11:43:37 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 int	char_f(double n)
 {
