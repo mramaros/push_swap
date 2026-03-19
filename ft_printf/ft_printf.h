@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 13:57:24 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/11 21:18:46 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/19 11:15:33 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ size_t	char_p(unsigned long n);
 size_t	char_d(int n);
 size_t	char_u(unsigned int n);
 size_t	char_x(unsigned int n, char c);
-int	char_f(double nbr);
+int		char_f(double nbr);
 
 #endif
