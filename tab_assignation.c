@@ -12,9 +12,7 @@
 
 void	tab_content(int *tab)
 {
-	int	i;
-
-	i = 1;
+	tab[0] = 0;
 	tab[1] = 0;
 	tab[2] = 0;
 	tab[3] = 0;

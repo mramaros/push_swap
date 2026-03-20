@@ -6,7 +6,7 @@
 /*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 10:05:14 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/19 11:22:18 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/20 19:49:31 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,12 @@ char	adaptive_algo(t_list **stack_a, t_list **stack_b, double disorder,
 	int		size;
 
 	size = ft_lstsize(*stack_a);
-	if (size < 5 || disorder < 0.2)
+	if (size <= 5)
+	{
+		simple_algo_optimised(stack_a, stack_b, tab);
+		strategy = 'S';
+	}
+	else if (size < 20 || disorder < 0.2)
 	{
 		simple(stack_a, stack_b, tab);
 		strategy = 'S';

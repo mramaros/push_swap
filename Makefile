@@ -6,7 +6,7 @@
 #    By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/19 11:23:01 by mramaros          #+#    #+#              #
-#    Updated: 2026/03/19 12:21:00 by ialrandr         ###   ########.fr        #
+#    Updated: 2026/03/20 19:47:59 by mramaros         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,9 @@ SOURCE		  =	bench_print.c \
 				utils_utils.c \
 				complex_algo.c \
 				complex_utils.c\
-				adaptive_check.c
+				adaptive_check.c \
+				simple_algo_optimised.c \
+				simple_algo_optimised_utils.c
 
 SOURCE_BONUS  = checker_bonus.c\
 				get_next_line_utils_bonus.c\

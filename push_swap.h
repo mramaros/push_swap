@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:54:23 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/19 10:07:34 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/20 20:14:37 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ t_list	*simple(t_list **stack_a, t_list **stack_b, int *tab);
 void	rotate_backward_to_min(t_list **stack_a, int cost_rra, int *tab);
 void	rotate_forward_to_min(t_list **stack_a, int cost_ra, int *tab);
 int		min_index(t_list **stack_a);
+void	simple_algo_optimised(t_list **stack_a, t_list **stack_b, int *tab);
+int		max_value(t_list *stack_a);
+void	push_and_rotate(t_list **stack_a, t_list **stack_b, int *tab);
+void	reverse_rotate_and_swap(t_list **stack_a, int *tab);
 
 int		ft_sqrt(int nb);
 void	swap_arway(int *a, int *b);
