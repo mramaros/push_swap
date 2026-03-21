@@ -6,7 +6,7 @@
 #    By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/26 13:51:52 by ialrandr          #+#    #+#              #
-#    Updated: 2026/03/11 21:24:36 by mramaros         ###   ########.fr        #
+#    Updated: 2026/03/21 18:52:16 by mramaros         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = libftprintf.a
 SOURCE = ft_printf ft_printf_utils ft_printf_others\
 			ft_hex ft_ltoa ft_printf_for_hundred
 
-C_FLAGS = -Wall -Wextra -Werror -g
+C_FLAGS = -Wall -Wextra -Werror
 
 OBJ_FILE = OBJ
 
