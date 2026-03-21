@@ -6,7 +6,7 @@
 /*   By: mramaros <mramaros@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 13:21:56 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/20 20:16:01 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/21 09:17:32 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,12 @@ static void	sort_five(t_list **stack_a, t_list **stack_b, int *tab)
 			push(stack_b, stack_a);
 			ft_printf(1, "pa\n");
 			tab[4]++;
+			rotate(stack_a);
+			ft_printf(1, "ra\n");
+			tab[6]++;
 		}
 		else
-		{
-			push_and_rotate(stack_a, stack_b, tab);
-		}
+			check_content(stack_a, stack_b, tab);
 	}
 }
 

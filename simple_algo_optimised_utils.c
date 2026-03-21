@@ -6,10 +6,11 @@
 /*   By: mramaros <mramaros@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 13:35:01 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/20 20:15:13 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/21 09:33:22 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf/ft_printf.h"
 #include "ft_printf/libft/libft.h"
 #include "push_swap.h"
 
@@ -29,14 +30,28 @@ int	max_value(t_list *stack_a)
 	return (max);
 }
 
-void	push_and_rotate(t_list **stack_a, t_list **stack_b, int *tab)
+void	check_content(t_list **stack_a, t_list **stack_b, int *tab)
 {
-	rotate(stack_a);
-	ft_printf(1, "ra\n");
-	tab[6]++;
+	int	i;
+
+	i = 0;
+	while (*(int *)(*stack_a)->content < *(int *)(*stack_b)->content)
+	{
+		rotate(stack_a);
+		ft_printf(1, "ra\n");
+		tab[6]++;
+		i++;
+	}
 	push(stack_b, stack_a);
 	ft_printf(1, "pa\n");
 	tab[4]++;
+	while (compute_disorder(*stack_a) != 0.0 && i >= 0)
+	{
+		reverse_rotate(stack_a);
+		ft_printf(1, "rra\n");
+		tab[9]++;
+		i--;
+	}
 }
 
 void	reverse_rotate_and_swap(t_list **stack_a, int *tab)
