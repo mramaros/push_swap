@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 14:33:02 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/19 08:44:53 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/21 18:46:21 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	character_check(int fd, int c, va_list ap)
 		return (char_c(fd, c));
 	if (c == 'f')
 		return (char_f(fd, va_arg(ap, double)));
-
 	return (0);
 }
 
