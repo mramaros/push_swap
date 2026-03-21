@@ -6,7 +6,7 @@
 /*   By: mramaros <mramaros@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 13:35:01 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/21 09:33:22 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/21 19:01:44 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	reverse_rotate_and_swap(t_list **stack_a, int *tab)
 {
 	reverse_rotate(stack_a);
 	ft_printf(1, "rra\n");
-	tab[6]++;
+	tab[9]++;
 	swap(stack_a);
 	ft_printf(1, "sa\n");
 	tab[1]++;
