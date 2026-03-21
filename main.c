@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/19 15:14:08 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/21 18:56:51 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ static void	push_swap(t_list **stack_a, t_list **stack_b,
 		strategy = adaptive_algo(stack_a, stack_b, disorder, tab);
 	if (search_bench(splits) == 1)
 		bench_print(disorder, strategy, tab);
+	free (tab);
 }
 
 int	main(int argc, char **argv)
