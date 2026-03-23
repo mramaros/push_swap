@@ -6,13 +6,13 @@
 #    By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/19 11:23:01 by mramaros          #+#    #+#              #
-#    Updated: 2026/03/23 13:09:55 by ialrandr         ###   ########.fr        #
+#    Updated: 2026/03/23 17:45:13 by mramaros         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		  =	push_swap
 NAME_BONUS    =	checker
-CFLAGS		  =	-Wall -Wextra -Werror
+CFLAGS		  =	-Wall -Wextra -Werror -g
 OBJ_DIR		  =	OBJ
 
 SOURCE		  =	bench_print.c \
@@ -36,7 +36,8 @@ SOURCE		  =	bench_print.c \
 				complex_utils.c\
 				adaptive_check.c \
 				simple_algo_optimised.c \
-				simple_algo_optimised_utils.c
+				simple_algo_optimised_utils.c \
+				parsing_utils.c
 
 SOURCE_BONUS  = checker_bonus.c\
 				get_next_line_utils_bonus.c\

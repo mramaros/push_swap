@@ -6,23 +6,26 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 17:02:13 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/18 09:15:49 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/23 17:45:24 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*int_convertion(char *str)
+int	*int_convertion(char *str, t_list **stack_a, char **splits)
 {
 	int		*res;
 	long	i_long;
 
 	i_long = ft_atoi_long(str);
 	if (i_long < -2147483648 || i_long > 2147483647)
-		error();
+		lst_clear_parsing(stack_a, splits);
 	res = (int *)malloc(sizeof(int));
 	if (!res)
+	{
+		free (res);
 		error();
+	}
 	*res = i_long;
 	return (res);
 }
@@ -49,9 +52,9 @@ void	error(void)
 	exit(EXIT_FAILURE);
 }
 
-void	lst_clear(t_list **stack)
+void	lst_clear(t_list **stack, char **splits)
 {
-	ft_lstclear(stack, free);
+	free_splits(splits, stack);
 	error();
 }
 
