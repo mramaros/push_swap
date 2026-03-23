@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
+/*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 10:16:01 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/19 12:05:54 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/23 10:09:42 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

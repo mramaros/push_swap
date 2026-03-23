@@ -6,11 +6,10 @@
 /*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 06:18:29 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/19 14:27:06 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/23 12:50:33 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf/ft_printf.h"
 #include "push_swap.h"
 
 void	assing_index(t_list **stack_a)

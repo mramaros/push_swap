@@ -3,22 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   simple_algo_optimised.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <mramaros@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 13:21:56 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/21 18:42:22 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/23 12:44:54 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf/ft_printf.h"
-#include "ft_printf/libft/libft.h"
 #include "push_swap.h"
 
 static void	sort_three(t_list **stack_a, int *tab)
 {
-	double		disorder;
-	int			min;
-	t_list		*tmp;
+	double	disorder;
+	int		min;
+	t_list	*tmp;
 
 	disorder = compute_disorder(*stack_a);
 	tmp = *stack_a;

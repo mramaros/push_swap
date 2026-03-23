@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+         #
+#    By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/19 11:23:01 by mramaros          #+#    #+#              #
-#    Updated: 2026/03/20 19:47:59 by mramaros         ###   ########.fr        #
+#    Updated: 2026/03/23 13:09:55 by ialrandr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,6 @@ SOURCE		  =	bench_print.c \
 				sequences.c \
 				sequences_ab.c \
 				simple_algo.c \
-				tab_assignation.c \
 				utils.c \
 				verify_another_num_strategy.c \
 				verify_bench.c \

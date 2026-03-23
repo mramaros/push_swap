@@ -6,11 +6,10 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/21 18:56:51 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/23 13:28:28 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf/libft/libft.h"
 #include "push_swap.h"
 
 void	free_splits(char **splits, t_list **stack_a)
@@ -29,12 +28,12 @@ void	free_splits(char **splits, t_list **stack_a)
 		i++;
 	}
 	free(splits);
-	free (tab);
+	free(tab);
 	exit(EXIT_FAILURE);
 }
 
-static void	push_swap(t_list **stack_a, t_list **stack_b,
-				char strategy, char **splits)
+static void	push_swap(t_list **stack_a, t_list **stack_b, char strategy,
+		char **splits)
 {
 	double	disorder;
 	int		*tab;
@@ -43,6 +42,11 @@ static void	push_swap(t_list **stack_a, t_list **stack_b,
 	disorder = compute_disorder(*stack_a);
 	if (disorder == 0)
 		return ;
+	else if (disorder == 0 && search_bench(splits) == 1)
+	{
+		bench_print(disorder, strategy, tab);
+		return ;
+	}
 	if (strategy == 's')
 		simple(stack_a, stack_b, tab);
 	else if (strategy == 'm')
@@ -53,7 +57,7 @@ static void	push_swap(t_list **stack_a, t_list **stack_b,
 		strategy = adaptive_algo(stack_a, stack_b, disorder, tab);
 	if (search_bench(splits) == 1)
 		bench_print(disorder, strategy, tab);
-	free (tab);
+	free(tab);
 }
 
 int	main(int argc, char **argv)

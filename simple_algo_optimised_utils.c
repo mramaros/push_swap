@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   simple_algo_optimised_utils.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <mramaros@student.42antananarivo  +#+  +:+       +#+        */
+/*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/20 13:35:01 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/21 19:01:44 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/23 13:25:15 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf/ft_printf.h"
-#include "ft_printf/libft/libft.h"
 #include "push_swap.h"
 
 int	max_value(t_list *stack_a)

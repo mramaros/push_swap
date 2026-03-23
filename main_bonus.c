@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 17:19:03 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/19 09:53:30 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/23 13:18:02 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,20 @@ static void	free_splits_bonus(char **splits)
 	free(splits);
 }
 
+static int	check_strategy(char **argv)
+{
+	int	i;
+
+	i = 0;
+	while (argv[i] != NULL)
+	{
+		if (verify_commands(argv[i]) != '0')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
@@ -35,6 +49,8 @@ int	main(int argc, char **argv)
 		return (0);
 	splits = parsing_all(argv);
 	if (!splits)
+		error();
+	if (check_strategy(splits))
 		error();
 	verify_another_num_strategy(splits);
 	stack_a = parsing_num(splits);

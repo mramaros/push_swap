@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mramaros <mramaros@42antananarivo.mg>      +#+  +:+       +#+        */
+/*   By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 13:12:34 by mramaros          #+#    #+#             */
-/*   Updated: 2026/03/19 15:16:06 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/23 12:21:12 by mramaros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
