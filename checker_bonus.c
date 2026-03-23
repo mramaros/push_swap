@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 15:31:04 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/23 12:22:16 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/23 14:52:11 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,19 @@ static void	run_sequence(t_list **stack_a, t_list **stack_b, char *line)
 		seq_ab(stack_a, stack_b, line);
 }
 
-static void	fail(void)
+static void	fail(t_list **stack_a, t_list **stack_b)
 {
 	ft_printf(1, "KO\n");
+	ft_lstclear(stack_a, free);
+	ft_lstclear(stack_b, free);
 	exit(EXIT_FAILURE);
 }
 
-static void	success(void)
+static void	success(t_list **stack_a, t_list **stack_b)
 {
 	ft_printf(1, "OK\n");
+	ft_lstclear(stack_a, free);
+	ft_lstclear(stack_b, free);
 	exit(EXIT_SUCCESS);
 }
 
@@ -63,7 +67,7 @@ void	checker(t_list **stack_a, t_list **stack_b)
 
 	disorder = compute_disorder(*stack_a);
 	if (!disorder)
-		success();
+		success(stack_a, stack_b);
 	line = get_next_line(0);
 	while (line)
 	{
@@ -71,8 +75,9 @@ void	checker(t_list **stack_a, t_list **stack_b)
 		free(line);
 		line = get_next_line(0);
 	}
+	free(line);
 	disorder = compute_disorder(*stack_a);
 	if (!disorder && !*stack_b)
-		success();
-	fail();
+		success(stack_a, stack_b);
+	fail(stack_a, stack_b);
 }
