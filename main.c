@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/23 13:28:28 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/23 14:09:30 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ static void	push_swap(t_list **stack_a, t_list **stack_b, char strategy,
 
 	tab = ft_calloc(13, sizeof(int));
 	disorder = compute_disorder(*stack_a);
-	if (disorder == 0)
-		return ;
-	else if (disorder == 0 && search_bench(splits) == 1)
+	if (disorder == 0 && search_bench(splits) == 1)
 	{
 		bench_print(disorder, strategy, tab);
 		return ;
 	}
+	else if (disorder == 0)
+		return ;
 	if (strategy == 's')
 		simple(stack_a, stack_b, tab);
 	else if (strategy == 'm')
