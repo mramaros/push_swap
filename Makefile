@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+         #
+#    By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/19 11:23:01 by mramaros          #+#    #+#              #
-#    Updated: 2026/03/24 14:47:28 by ialrandr         ###   ########.fr        #
+#    Updated: 2026/03/24 17:45:19 by ialrandr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
