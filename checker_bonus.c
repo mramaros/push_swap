@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 15:31:04 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/23 14:52:11 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/24 14:39:02 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,11 @@ static void	run_sequence(t_list **stack_a, t_list **stack_b, char *line)
 		swap(stack_a);
 	else if (!ft_strcmp(line, "sb\n"))
 		swap(stack_b);
-	else
+	else if (!ft_strcmp(line, "ss\n") || !ft_strcmp(line, "rr\n")
+		|| !ft_strcmp(line, "rrr\n"))
 		seq_ab(stack_a, stack_b, line);
+	else
+		free_stack(stack_a, stack_b, line);
 }
 
 static void	fail(t_list **stack_a, t_list **stack_b)

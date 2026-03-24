@@ -6,31 +6,11 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 14:20:27 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/23 14:09:30 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/24 14:19:47 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	free_splits(char **splits, t_list **stack_a)
-{
-	int	i;
-	int	*tab;
-
-	i = 0;
-	tab = ft_calloc(13, sizeof(int));
-	if (search_bench(splits) == 1 && !*stack_a)
-		bench_print(0, 'a', tab);
-	ft_lstclear(stack_a, free);
-	while (splits[i])
-	{
-		free(splits[i]);
-		i++;
-	}
-	free(splits);
-	free(tab);
-	exit(EXIT_FAILURE);
-}
 
 static void	push_swap(t_list **stack_a, t_list **stack_b, char strategy,
 		char **splits)
@@ -43,10 +23,10 @@ static void	push_swap(t_list **stack_a, t_list **stack_b, char strategy,
 	if (disorder == 0 && search_bench(splits) == 1)
 	{
 		bench_print(disorder, strategy, tab);
-		return ;
+		free_with_tab(splits, stack_a, tab);
 	}
 	else if (disorder == 0)
-		return ;
+		free_with_tab(splits, stack_a, tab);
 	if (strategy == 's')
 		simple(stack_a, stack_b, tab);
 	else if (strategy == 'm')

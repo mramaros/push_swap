@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:54:23 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/23 17:37:47 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/24 14:18:52 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,21 @@ char	parsing_strategy(char **argv);
 int		duplicate(t_list **stack);
 int		ft_strcmp(char *str1, char *str2);
 double	compute_disorder(t_list *a);
+
 void	free_splits(char **splits, t_list **stack_a);
+void	free_with_tab(char **splits, t_list **stack_a, int *tab);
+void	lst_clear_parsing(char **splits, t_list **stack_a);
 
 long	ft_atoi_long(const char *nptr);
 int		*int_convertion(char *str, t_list **stack_a, char **splits);
 int		is_int(char *str);
 
 void	bench_print(double disorder, char strategy, int *tab);
-void	tab_content(int *tab);
 
 void	error(void);
-void	lst_clear(t_list **stack, char **splits);
 char	verify_commands(char *argv);
 void	verify_another_num_strategy(char **splits);
 int		search_bench(char **argv);
-void	free_parsing(char **splits, t_list **stack_a);
-void	lst_clear_parsing(t_list **stack, char **splits);
 
 t_list	*simple(t_list **stack_a, t_list **stack_b, int *tab);
 void	rotate_backward_to_min(t_list **stack_a, int cost_rra, int *tab);

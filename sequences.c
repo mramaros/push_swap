@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 11:05:22 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/10 16:51:39 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/24 14:50:40 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ void	reverse_rotate(t_list **stack)
 	t_list	*last;
 	t_list	*temp;
 
+	if (!*stack)
+		return ;
 	first = *stack;
 	last = ft_lstlast(*stack);
 	temp = *stack;

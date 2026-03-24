@@ -6,24 +6,11 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 17:19:03 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/23 14:59:58 by ialrandr         ###   ########.fr       */
+/*   Updated: 2026/03/24 14:46:32 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
-
-static void	free_splits_bonus(char **splits)
-{
-	int	i;
-
-	i = 0;
-	while (splits[i])
-	{
-		free(splits[i]);
-		i++;
-	}
-	free(splits);
-}
 
 static int	check_strategy(char **argv)
 {
@@ -51,15 +38,15 @@ int	main(int argc, char **argv)
 	if (!splits)
 		error();
 	if (check_strategy(splits))
+	{
+		free_splits_bonus(splits);
 		error();
+	}
 	verify_another_num_strategy(splits);
 	stack_a = parsing_num(splits);
 	free_splits_bonus(splits);
-	stack_b = NULL;
 	if (!stack_a)
-	{
-		free_splits_bonus(splits);
 		exit(EXIT_FAILURE);
-	}
+	stack_b = NULL;
 	checker(&stack_a, &stack_b);
 }

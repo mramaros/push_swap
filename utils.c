@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 17:02:13 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/23 17:45:24 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/24 13:59:19 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int	*int_convertion(char *str, t_list **stack_a, char **splits)
 
 	i_long = ft_atoi_long(str);
 	if (i_long < -2147483648 || i_long > 2147483647)
-		lst_clear_parsing(stack_a, splits);
+		lst_clear_parsing(splits, stack_a);
 	res = (int *)malloc(sizeof(int));
 	if (!res)
 	{
-		free (res);
+		free(res);
 		error();
 	}
 	*res = i_long;
@@ -50,12 +50,6 @@ void	error(void)
 {
 	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
-}
-
-void	lst_clear(t_list **stack, char **splits)
-{
-	free_splits(splits, stack);
-	error();
 }
 
 int	duplicate(t_list **stack)

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mramaros <mramaros@student.42antananari    +#+  +:+       +#+         #
+#    By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/19 11:23:01 by mramaros          #+#    #+#              #
-#    Updated: 2026/03/23 17:45:13 by mramaros         ###   ########.fr        #
+#    Updated: 2026/03/24 14:47:28 by ialrandr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,11 +37,12 @@ SOURCE		  =	bench_print.c \
 				adaptive_check.c \
 				simple_algo_optimised.c \
 				simple_algo_optimised_utils.c \
-				parsing_utils.c
+				free.c
 
 SOURCE_BONUS  = checker_bonus.c\
 				get_next_line_utils_bonus.c\
 				get_next_line_bonus.c\
+				free_bonus.c\
 				main_bonus.c\
 				ft_strcmp.c \
 				parsing.c \

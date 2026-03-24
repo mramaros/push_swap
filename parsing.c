@@ -6,7 +6,7 @@
 /*   By: ialrandr <ialrandr@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:35:47 by ialrandr          #+#    #+#             */
-/*   Updated: 2026/03/23 17:38:05 by mramaros         ###   ########.fr       */
+/*   Updated: 2026/03/24 14:06:05 by ialrandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,13 @@ t_list	*parsing_num(char **splits)
 		{
 			number = ft_lstnew(int_convertion(splits[i], &stack_a, splits));
 			if (!number)
-				lst_clear(&stack_a, splits);
+				lst_clear_parsing(splits, &stack_a);
 			number->index = NULL;
 			ft_lstadd_back(&stack_a, number);
 		}
 	}
 	if (duplicate(&stack_a))
-		lst_clear_parsing(&stack_a, splits);
+		lst_clear_parsing(splits, &stack_a);
 	return (stack_a);
 }
 
